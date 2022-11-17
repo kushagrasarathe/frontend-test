@@ -1,38 +1,18 @@
 @import "./stylesheet-1.css";
 @import url("https://fonts.cdnfonts.com/css/gilroy-bold");
 
-@media only screen and (min-width: 720px) and (max-width: 1023px) {
-  /* .person1,
-  .person2,
-  .person3,
-  .person4 {
-    width: 25%;
-    margin: 20px;
-    padding: 10px;
-  } */
-}
-@media only screen and (min-width: 1024px) {
-  /* .person1,
-  .person2,
-  .person3,
-  .person4 {
-    width: 25%;
-    margin: 20px;
-  } */
-}
-
 .main-container {
   padding: var(--padding-xxL);
 }
 
 .event-date {
-  font-family: "Gilroy";
+  font-family: "Gilroy-Medium";
   font-style: normal;
   font-weight: 500;
   font-size: var(--font-size-s);
   line-height: 22px;
   color: #000000;
-  margin: 20px 0;
+  margin: var(--margin-s);
 }
 
 .big-txt {
@@ -59,7 +39,8 @@
   opacity: 0.6;
 }
 
-.funding-div, .grants-div {
+.funding-div,
+.grants-div {
   /* margin-left: auto; */
   padding: var(--padding-xl);
 }
@@ -72,14 +53,19 @@
   border-image: linear-gradient(#00000000, #474747, #00000000) 0 100%;
 }
 
-.coming-soon {
+.apply-btn {
   opacity: 1;
   width: 260px;
   margin: 20px 0;
 }
 
+.apply-btn:hover {
+  background-color: var(--color-cta-blue);
+}
+
 .mentors {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -87,4 +73,39 @@
   border-radius: 6px;
   max-width: 250px;
   margin: 20px 0;
+}
+
+
+@media only screen and (max-width: 720px) {
+
+    .main-container {
+        padding-bottom: 0;
+    }
+      
+
+    .funding-grants-section {
+        flex-direction: column;
+    }
+
+    .seperator {
+        /* display: none; */
+        height: 0px;
+        width: 90%;
+        border: 1px solid slategrey;
+        /* border-bottom: 1px solid red; */
+        /* border-image: none; */
+      }
+   
+    .mentors {
+        justify-content: center;
+    }
+
+    .program-view-mentor-profile {
+    margin: var(--margin-xl);
+        
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
 }
