@@ -1,8 +1,23 @@
 @import "./stylesheet-1.css";
 @import url("https://fonts.cdnfonts.com/css/gilroy-bold");
 
+/* adds padding to main container */
 .main-container {
   padding: var(--padding-xxL);
+  padding-bottom: 0;
+}
+
+
+
+/* pitch section */
+.pitch-title {
+  font-family: "Gilroy-Medium";
+}
+
+.pitch-content {
+  font-size: var(--font-size-s);
+  margin: var(--margin-s);
+  margin-left: 0;
 }
 
 .event-date {
@@ -11,17 +26,12 @@
   font-weight: 500;
   font-size: var(--font-size-s);
   line-height: 22px;
-  color: #000000;
   margin: var(--margin-s);
 }
 
-.big-txt {
-  margin-right: var(--margin-m);
-  font-size: var(--font-size-large-heading);
-  line-height: 50px;
-  font-family: "Gilroy-Medium";
-}
+/* funding and grants section */
 
+/* adds disply type flex to funding and grants section*/
 .funding-grants-section {
   display: flex;
   align-items: center;
@@ -30,21 +40,19 @@
   text-align: center;
 }
 
+/* style coindcx image */
 .img-thumb {
   margin: var(--margin-l);
   max-width: 150px;
 }
 
-.opacity {
-  opacity: 0.6;
-}
-
+/* adds padding to seperate funding and grant divs */
 .funding-div,
 .grants-div {
-  /* margin-left: auto; */
   padding: var(--padding-xl);
 }
 
+/* vertical seperator to seperate funding section from grants section */
 .seperator {
   height: 350px;
   border-width: 2px;
@@ -53,59 +61,88 @@
   border-image: linear-gradient(#00000000, #474747, #00000000) 0 100%;
 }
 
+/* apply now button */
 .apply-btn {
   opacity: 1;
   width: 260px;
   margin: 20px 0;
 }
 
+/* adds hover effect to apply now button and changes background */
 .apply-btn:hover {
   background-color: var(--color-cta-blue);
 }
 
+/* adds flex property to mentors section */
 .mentors {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* changes mentor profiles radius and size and adds margin */
 .program-view-mentor-profile {
   border-radius: 6px;
   max-width: 250px;
   margin: 20px 0;
+  transition: 0.2s ease-in-out;
+}
+
+/* adds scale on hover property to mentor images, 
+this is an add-onn apart from figma design */
+.program-view-mentor-profile:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+/* changes font size for frequently asked questions */
+.faq {
+  font-size: var(--font-size-s);
 }
 
 
+/* other css classes created to replicate figma design */
+
+/* large title style */
+.big-txt {
+  margin-right: var(--margin-m);
+  font-size: var(--font-size-large-heading);
+  line-height: 50px;
+  font-family: "Gilroy-Medium";
+}
+
+/* adds opacity to fonts in some section of webpage */
+.opacity {
+  opacity: 0.6;
+  font-size: var(--font-size-s);
+}
+
+/* mobile responsive-ness  */
 @media only screen and (max-width: 720px) {
+  /* adjusts padding for main container for mobile view */
+  .main-container {
+    padding-bottom: 0;
+  }
 
-    .main-container {
-        padding-bottom: 0;
-    }
-      
+  /* changes grants section from row to coulmn for mobile devices */
+  .funding-grants-section {
+    flex-direction: column;
+  }
 
-    .funding-grants-section {
-        flex-direction: column;
-    }
+  /* changes seperator from vertical to horizontal */
+  .seperator {
+    height: 0px;
+    width: 90%;
+    border: 1px solid slategrey;
+  }
 
-    .seperator {
-        /* display: none; */
-        height: 0px;
-        width: 90%;
-        border: 1px solid slategrey;
-        /* border-bottom: 1px solid red; */
-        /* border-image: none; */
-      }
-   
-    .mentors {
-        justify-content: center;
-    }
+  /* centers the mentors section for mobile view */
+  .mentors {
+    justify-content: center;
+  }
 
-    .program-view-mentor-profile {
+  /* changes margin to mentor profiles for mobile view */
+  .program-view-mentor-profile {
     margin: var(--margin-xl);
-        
-    }
-
-}
-
-@media only screen and (min-width: 1024px) {
+  }
 }
